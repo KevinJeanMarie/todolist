@@ -1,5 +1,6 @@
 body{
     margin: 0;
+
 }
 header {
     padding: 8px 60px;
@@ -22,6 +23,7 @@ section{
     padding-top: 40px;
     /* flex-direction: column; */
     margin-bottom: 50px;
+    l
 }
 /* sectin .shadow {
     position: absolute;
@@ -88,11 +90,7 @@ section form button {
 }
 #list div .remove {
     font-size: 24px;
-<<<<<<< HEAD
-    color:red;
-=======
     /* color: red; */
->>>>>>> 9d76937c92e6f228ba0f41136da1e5ea3034426c
     cursor: pointer;
     position: absolute;
     right: -45px;
@@ -109,4 +107,7 @@ section form button {
     cursor: pointer;
 
 }
+
+
+
 
