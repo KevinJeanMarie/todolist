@@ -2,20 +2,20 @@ body{
     margin: 0;
     display: flex;
     justify-content: center;
-    padding: 60px 0;
+    padding: 35px 0;
+    height:95vh;
     background: url("./Mount1.jpg") no-repeat;
-    background-size: cover;
-    position:relative;
+    background-size:cover; 
+    position: relative;
     font-family: 'Architects Daughter', cursive;
 }
-.shadow {
+ .shadow {
     position: absolute;
     top: 0; 
     width: 100%; 
-    height: 100vh;
-    background-color: black;
-    opacity: 0.6;
-}
+    height: 100%;
+    background-color: rgba(89, 92, 94, 0.6);
+} 
 .container_todolist {
     width: 60%;
     /* border: 5px solid blue; */
@@ -37,7 +37,7 @@ header div {
     font-size: 50px;
     text-shadow: 6px 6px 7px black;
 }
-section {
+section{
     /* background-color: rgb(88, 155, 185); */
     /* height: 100vh; */
     display: flex;
@@ -46,9 +46,7 @@ section {
     padding-top: 40px;
     /* flex-direction: column; */
     margin-bottom: 50px;
-
 }
-
 /* sectin .shadow {
     position: absolute;
     top: 0;
@@ -57,13 +55,12 @@ section {
     background-color: black;
     opacity: 0.5;
 } */
- section form {
-width: 100%;
-height: 40px;
-display: flex;
-justify-content: center;
-gap: 10px;
-
+ section form{
+   height: 40px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   gap: 10px;
 }  
 
 section form input{
@@ -81,15 +78,18 @@ section form button {
     height: 100%;
     background-color: rgb(61, 109, 240);
     border: blue 3px solid;
-    /* padding: 2px 5px; */
+    padding: 2px 5px; 
     color: #fff;
     font-size: 30px; 
     vertical-align: middle;
     cursor: pointer;
-    /* box-shadow: 0px 3px 10px black; */
-    
+    /* box-shadow: 0px 3px 10px black; */ 
 }
-/******************************************************************************/
+section form button:hover {
+    background-color: #fff;
+    color: blue;
+}
+
 .status_btn {
     display: flex;
     justify-content: center;
@@ -99,13 +99,22 @@ section form button {
 .status_btn button{
     font-size: 24px;
     color: #fff;
+    background-color: rgba(253, 18, 18,0.4);
     box-shadow: 3px 3px 6px black;
     border-radius: 20px;
     padding: 8px 16px;
     cursor: pointer;
     transition: ease-out 0.3s;
 }
-.status_btn button:nth-child(1){
+.status_btn button:hover{
+    color: red;
+    background-color: #fff;
+}
+.status_btn .delete{
+    background-color: blue;
+
+}
+/* .status_btn button:nth-child(1){
     background-color: blue;
 }
 .status_btn button:nth-child(1):hover{
@@ -125,6 +134,21 @@ section form button {
 .status_btn button:nth-child(3):hover{
     background-color: #fff;
     color: purple;
+} */
+.random_task{
+    height: 100%;
+    background-color: #fff;
+    padding: 2px 5px; 
+    color: red;
+    font-size: 30px; 
+    /* vertical-align: middle; */
+    cursor: pointer;
+    border-radius: 20px;
+    transition: ease-out 0.3s;
+}
+.random_task:hover {
+    color: #fff;
+    background-color: rgba(253, 18, 18,0.4);
 }
 
 #list {
@@ -137,43 +161,26 @@ section form button {
  #list #list_container
 {
     background-color:white;
-    border: 2px solid blue;
-    width: 800px;
+    /* border: 2px solid blue; */
+    border-radius: 20px;
+    width: 100%;
     height: 30px;  
     display:flex;
     align-items: center; 
-    padding: 10px;
-    box-shadow: 4px 4px 3px grey;
+    /* padding: 0 10px; */
+    padding-left: 20px;
+    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.75);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     position: relative;
     margin-bottom: 20px;
-    /* overflow: hidden; */
-    
 }
 
-#list #list_container:hover .remove {
-    display: flex;
-    right: 0px;
-    align-items: center;
-    padding: 0 12px;
-}
 #list #list_container div {
     font-weight: bold;
     /* text-shadow: 5px 5px 3px gray; */
 }
-#list #list_container .remove {
-    /* color: red; */
-    cursor: pointer;
-    position: absolute;
-    right: -45px;
-    display: none;
-    background-color: red;
-    color: #fff;
-    /* padding:14px; */
-    height: 100%;
-    transition: all ease 3s;
-}
+
 #list #list_container .modification {
     /* background-color: blue; */
     /* color: #fff; */
@@ -220,7 +227,52 @@ section form button {
     color: rgb(61, 109, 240);
     background-color: #fff;
 }
-
-
-
-
+#list #list_container .priority {
+    /* position: relative; */
+    height: 100%;
+    /* overflow: hidden; */
+}
+#list #list_container .priority i {
+    /* position: absolute;
+    top:-80px;
+    transition: ease-in-out 0.4s; */
+    height: 100%;
+}
+/* #list #list_container:hover .priority{
+     overflow: hidden; 
+} */
+/* #list #list_container:hover .priority i {
+    top: 0;
+}  */
+#list #list_container .container-remove {
+    position: relative;
+    height: 100%;
+    width: 40px;
+    overflow: hidden; 
+}
+#list #list_container .remove {
+    cursor: pointer;
+    position: absolute;
+    right: -45px; 
+    top: -45px;
+    background-color: red;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    transition: all ease 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+#list #list_container:hover .remove {
+    right: 0px;
+    top: 0;
+}
+select {
+    height: 30px;
+    font-size: 24px;
+}
+option {
+    font-size: 24px;
+}
